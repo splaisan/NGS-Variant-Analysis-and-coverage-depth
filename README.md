@@ -1,10 +1,10 @@
-NGS-Variant-Analysis-and-coverage-depth
+**NGS-Variant-Analysis-and-coverage-depth**
 
-Aim: Subsample a large Drosophila dataset to measure the effect of coverage depth on variant calls
+**Aim:** Subsample a large Drosophila dataset to measure the effect of coverage depth on variant calls
 
 Please read the accompanying markdown document. Scripts are provided in teh Scripts folder in order to repeat this work. The data being quite large, you will need to download it direclty from the public sources as indicated in the report.
 
-Have a nice data mining day.
+*Have a nice data mining day.*
 
 <h4>Please send comments and feedback to <a href="mailto:bits@vib.be">bits@vib.be</a></h4>
 
