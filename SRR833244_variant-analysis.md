@@ -1,6 +1,6 @@
-% Analysis of Drosophila melanogaster NGS data
-% @SP, VIB Nucleomics Core & BITS
-% (April 12, 2016 - v1.0)
+% Analysis of Drosophila melanogaster NGS data  
+% @SP, VIB Nucleomics Core & BITS  
+% (April 12, 2016 - v1.0)  
 # Getting public data from SRA
 
 A randomly chosen DGRP genome was selected in SRA and data obtained using aspera. The sample corresponds to the strain **DGRP-100** <http://flybase.org/reports/FBsn0000288.html>. The DGRP resources can be accessed at <http://dgrp2.gnets.ncsu.edu/>
