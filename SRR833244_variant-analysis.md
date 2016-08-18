@@ -4,7 +4,6 @@
 # Getting public data from SRA
 
 A randomly chosen DGRP genome was selected in SRA and data obtained using aspera. The sample corresponds to the strain **DGRP-100** <http://flybase.org/reports/FBsn0000288.html>. The DGRP resources can be accessed at <http://dgrp2.gnets.ncsu.edu/>
-
 Additional sample information can be found on SRA under the ID *SAMN01057298* and sequenced using a Illumina Genome Analyzer IIx.
 
 The link to the info page for that project is <http://www.ncbi.nlm.nih.gov/biosample/1057298>
@@ -291,7 +290,7 @@ gold=reference/DGRP2_100_variants.vcf.gz
 scripts/vcf-compare-2.sh ${all_calls} ${gold} VCF-compare2gold
 ```
 
-``
+```
 ## venn comparison results for:
 # 1:    BDGP5.78_bwa_varscan2_variants/BDGP5.78_mpileup2cns.vcf.gz
 # 2:    reference/DGRP2_100_variants.vcf.gz
