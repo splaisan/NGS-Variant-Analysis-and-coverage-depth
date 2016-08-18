@@ -3,7 +3,11 @@
 % (April 12, 2016 - v1.0)  
 
 # Content
-**[Getting public data from SRA](#)**
+**[Getting public data from SRA](#getting-public-data-from-sra)**  
+**[Preprocess data and prepare accessory files]()**  
+**[Align reads to the reference genome and compute coverage]()**  
+**[Find differences between sequenced data and reference genome]()**  
+**[Evaluate the effect of limiting coverage on variant calling]()**  
 
 # Getting public data from SRA
 
