@@ -1,6 +1,6 @@
 % Analysis of Drosophila melanogaster NGS data  
 % @SP, VIB Nucleomics Core & BITS  
-% (April 12, 2016 - v1.0)  
+% (April 12, 2016 - v1.0 - online August 18, 2016)  
 
 ## Content
 * [Getting public data from SRA](#getting-public-data-from-sra)
