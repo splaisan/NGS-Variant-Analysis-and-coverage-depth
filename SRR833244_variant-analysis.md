@@ -670,6 +670,4 @@ Increasing the depth of sequencing slightly improves the **recall sensitivity** 
 
 If missing 10% of the variants is not an issue, a sequencing depth of ~12x seems sufficient to achieve the goal of Drosophila variant sequencing but a raw coverage of 30x to 50x will be a better choice to stay closer to the reference results obtained by others and keep some safety margin.
 
-\  
 ![VIB Nucleomcis Core](pictures/logo-nucl_core.png) more at **<http://www.nucleomics.be>**
-\  
