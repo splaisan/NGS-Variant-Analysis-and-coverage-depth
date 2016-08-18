@@ -362,6 +362,7 @@ scripts/vcf-compare-2.sh ${hom_calls} ${gold} VCF-compare_hom2gold
 The results suggests that a number of het-calls produced by Varscan2 may be false positives (a fraction of the missing 19% of input). We also miss 71608 calls from the golden standard (11% of input) when applying Varscan2 with default parameters.
 
 ## Evaluate the effect of limiting coverage on variant calling 
+*[[back-to-top](#top)]*  
 
 The most important question assessed by this study is to define the minimal coverage depth (quantity of NGS reads) that will be required to correctly call as many as possible true variants in a fly genome. In order to find this limit, we can downsample the data published in the BDGP study and monitor the recall with our own calls aas compared to the published results.
  
