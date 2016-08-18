@@ -683,6 +683,6 @@ In summary:
 
 Increasing the depth of sequencing slightly improves the **recall sensitivity** of known variants from 78.6% (25% data ~ 16x raw coverage) to 84.1% (33% data ~ 21x raw coverage), 87.4% (50% data ~ 32x raw coverage) as compared to the recall of 88.7% for full data analysis (~65x raw coverage) . 
 
-If missing 10% of the variants is not an issue, a sequencing depth of ~12x seems sufficient to achieve the goal of Drosophila variant sequencing but a raw coverage of 30x to 50x will be a better choice to stay closer to the reference results obtained by others and keep some safety margin.
+If missing 10% of the variants is not an issue, a sequencing depth of ~16x (lowest simulation in this study) seems sufficient to achieve the goal of Drosophila variant sequencing but a raw coverage of 30x to 50x will be a better choice to stay closer to the reference results obtained by others and keep some safety margin.
 
 ![VIB BITS](http://www.vib.be/VIBMediaLibrary/Logos/Service_facilities/BITS_website.jpg) more at **<http://www.bits.vib.be>**
