@@ -2,7 +2,7 @@
 
 **Aim:** Subsample a large Drosophila dataset to measure the effect of coverage depth on variant calls
 
-Please read the accompanying markdown document. Scripts are provided in teh Scripts folder in order to repeat this work. The data being quite large, you will need to download it direclty from the public sources as indicated in the report.
+Please read the accompanying markdown document. Scripts are provided in the Scripts folder in order to repeat this work (additional scripts are present elsewhere in this GitHub repository). The data being quite large, you will need to download it direclty from the public sources as indicated in the report.
 
 *Have a nice data mining day.*
 
