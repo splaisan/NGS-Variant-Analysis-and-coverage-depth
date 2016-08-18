@@ -11,6 +11,7 @@
 * [Conclusion of this study](#conclusion-of-this-study)
 
 ## Getting public data from SRA
+*[[back-to-top](#top)]*  
 
 A randomly chosen DGRP genome was selected in SRA and data obtained using aspera. The sample corresponds to the strain **DGRP-100** <http://flybase.org/reports/FBsn0000288.html>. The DGRP resources can be accessed at <http://dgrp2.gnets.ncsu.edu/>
 Additional sample information can be found on SRA under the ID *SAMN01057298* and sequenced using a Illumina Genome Analyzer IIx.
@@ -31,6 +32,7 @@ ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh \
 ```
 
 ## Preprocess data and prepare accessory files
+*[[back-to-top](#top)]*  
 
 ### Convert SRA to fastQ (paired reads)
 
@@ -88,7 +90,7 @@ fi
 REM: A number of scripts can be found on <https://github.com/BITS-VIB/>.
 
 ## Align reads to the reference genome and compute coverage
-*[(back-to-top)[#top]]*
+*[[back-to-top](#top)]*  
 
 ### Map reads to the reference genome
 
@@ -253,7 +255,7 @@ The **findNregions.pl** Perl script allows identifying GAPs and building a track
 6Mb of the reference are occupied by N's, likely representing the telomeres and centromeres for the largest part. There regions can obviously not be mapped by reads and are good to know when visualising the data.
 
 ## Find differences between sequenced data and reference genome
-*[(back-to-top)[#top]]*
+*[[back-to-top](#top)]*  
 
 ### extract the individual from the published multi-genome variant file
 
@@ -359,11 +361,11 @@ scripts/vcf-compare-2.sh ${hom_calls} ${gold} VCF-compare_hom2gold
 
 The results suggests that a number of het-calls produced by Varscan2 may be false positives (a fraction of the missing 19% of input). We also miss 71608 calls from the golden standard (11% of input) when applying Varscan2 with default parameters.
 
-# Evaluate the effect of limiting coverage on variant calling 
+## Evaluate the effect of limiting coverage on variant calling 
 
 The most important question assessed by this study is to define the minimal coverage depth (quantity of NGS reads) that will be required to correctly call as many as possible true variants in a fly genome. In order to find this limit, we can downsample the data published in the BDGP study and monitor the recall with our own calls aas compared to the published results.
  
-## Subsample the BAM file and repeat the exercise
+### Subsample the BAM file and repeat the exercise
 
 A number of random subset were taken that keep 25%, 33%, and 50% of the full data, respectively. We took subsets of the BAM data directly which was shown in a separate experiment to be equivalent to mapping subsets of the original read pairs and using the BAM data for calling.
 
@@ -573,7 +575,7 @@ Length   976945
 
 The variant sequencing depth mean follows the subsampling value while the variant count is less affected, suggesting that even the lowest 25% coverage is not yet 'too' detrimental for this metric. The minimal value of 8 for site-depth comes directly from the parameter set for Varscan2.
 
-## Prepare variant lists for VCF comparison 
+### Prepare variant lists for VCF comparison 
 
 Comparing variant recall between our Varscan data and the gold-standard for this single genome will tell us if coverage depth becomes a limit.
 
@@ -676,7 +678,7 @@ In summary:
 ```
 
 ## Conclusion of this study
-*[(back-to-top)[#top]]*
+*[[back-to-top](#top)]*  
 
 Increasing the depth of sequencing slightly improves the **recall sensitivity** of known variants from 78.6% (25% data ~ 16x raw coverage) to 84.1% (33% data ~ 21x raw coverage), 87.4% (50% data ~ 32x raw coverage) as compared to the recall of 88.7% for full data analysis (~65x raw coverage) . 
 
