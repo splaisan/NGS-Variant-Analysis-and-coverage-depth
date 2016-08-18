@@ -3,12 +3,12 @@
 % (April 12, 2016 - v1.0)  
 
 # Content
-**[Getting public data from SRA](#getting-public-data-from-sra)**  
-**[Preprocess data and prepare accessory files](#preprocess-data-and-prepare-accessory-files)**  
-**[Align reads to the reference genome and compute coverage](#align-reads-to-the-reference-genome-and-compute-coverage)**  
-**[Find differences between sequenced data and reference genome](#find-differences-between-sequenced-data-and-reference-genome)**  
-**[Evaluate the effect of limiting coverage on variant calling](#evaluate-the-effect-of-limiting-coverage-on-variant-calling)**  
-**[Conclusion of this study](#conclusion-of-this-study)**  
+* [Getting public data from SRA](#getting-public-data-from-sra)*  
+* [Preprocess data and prepare accessory files](#preprocess-data-and-prepare-accessory-files)*  
+* [Align reads to the reference genome and compute coverage](#align-reads-to-the-reference-genome-and-compute-coverage)*  
+* [Find differences between sequenced data and reference genome](#find-differences-between-sequenced-data-and-reference-genome)*  
+* [Evaluate the effect of limiting coverage on variant calling](#evaluate-the-effect-of-limiting-coverage-on-variant-calling)*  
+* [Conclusion of this study](#conclusion-of-this-study)*  
 
 # Getting public data from SRA
 
