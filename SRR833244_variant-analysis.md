@@ -363,7 +363,7 @@ java -jar $PICARD/picard.jar DownsampleSam \
 	samtools flagstat SRR833244_dm5-pe_50pc.bam
 ```
 
-``
+```
 43980693 + 0 in total (QC-passed reads + QC-failed reads)
 308669 + 0 secondary
 0 + 0 supplementary
