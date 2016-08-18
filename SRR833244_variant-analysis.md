@@ -667,6 +667,9 @@ done
 	-x 1 -o pictures/hom_BDGP-recallpc -u 2 -P 1
 ```
 
+## Conclusion of this study
+*[[back-to-top](#top)]*  
+
 In summary:
 
 ```
@@ -677,9 +680,6 @@ In summary:
 |  33% ~21x |     117674    |    533052    |  81.9%   |    84.1%  |   101059   |
 |  25% ~16x |     108954    |    498553    |  82.1%   |    78.6%  |   135558   |
 ```
-
-## Conclusion of this study
-*[[back-to-top](#top)]*  
 
 Increasing the depth of sequencing slightly improves the **recall sensitivity** of known variants from 78.6% (25% data ~ 16x raw coverage) to 84.1% (33% data ~ 21x raw coverage), 87.4% (50% data ~ 32x raw coverage) as compared to the recall of 88.7% for full data analysis (~65x raw coverage) . 
 
