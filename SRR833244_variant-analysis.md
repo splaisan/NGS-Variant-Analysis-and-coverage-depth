@@ -2,7 +2,7 @@
 % @SP, VIB Nucleomics Core & BITS  
 % (April 12, 2016 - v1.0)  
 
-# Content
+## Content
 * [Getting public data from SRA](#getting-public-data-from-sra)
 * [Preprocess data and prepare accessory files](#preprocess-data-and-prepare-accessory-files)
 * [Align reads to the reference genome and compute coverage](#align-reads-to-the-reference-genome-and-compute-coverage)
@@ -10,7 +10,7 @@
 * [Evaluate the effect of limiting coverage on variant calling](#evaluate-the-effect-of-limiting-coverage-on-variant-calling)
 * [Conclusion of this study](#conclusion-of-this-study)
 
-# Getting public data from SRA
+## Getting public data from SRA
 
 A randomly chosen DGRP genome was selected in SRA and data obtained using aspera. The sample corresponds to the strain **DGRP-100** <http://flybase.org/reports/FBsn0000288.html>. The DGRP resources can be accessed at <http://dgrp2.gnets.ncsu.edu/>
 Additional sample information can be found on SRA under the ID *SAMN01057298* and sequenced using a Illumina Genome Analyzer IIx.
@@ -19,7 +19,7 @@ The link to the info page for that project is <http://www.ncbi.nlm.nih.gov/biosa
 
 ![SRA](pictures/picture_01.png)
 
-## Download SRA data
+### Download SRA data
 
 ```bash
 url="anonftp@ftp.ncbi.nlm.nih.gov:/sra/sra-instant/reads/ByRun/sra/SRR/"
@@ -30,9 +30,9 @@ ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh \
 	/data1/SRR833244/aspera_download
 ```
 
-# Preprocess data and prepare accessory files
+## Preprocess data and prepare accessory files
 
-## Convert SRA to fastQ (paired reads)
+### Convert SRA to fastQ (paired reads)
 
 ```bash
 mkdir -p reads
@@ -41,7 +41,7 @@ fastq-dump --origfmt -I --split-files --gzip \
 	-O reads
 ```
 
-## Control read quality with fastQC
+### Control read quality with fastQC
 
 Each file contains 43'670'489 reads (paired).
  
@@ -51,7 +51,7 @@ fastqc -o readQC --noextract -f fastq reads/SRR833244_1.fastq.gz
 fastqc -o readQC --noextract -f fastq reads/SRR833244_2.fastq.gz
 ```
 
-## Prepare reference files for various tools
+### Prepare reference files for various tools
 
 A number of scripts and custom functions are repeatedly used in scripts and are shown below.
 
@@ -87,9 +87,10 @@ fi
 
 REM: A number of scripts can be found on <https://github.com/BITS-VIB/>.
 
-# Align reads to the reference genome and compute coverage
+## Align reads to the reference genome and compute coverage
+*[(back-to-top)[#top]]*
 
-## Map reads to the reference genome
+### Map reads to the reference genome
 
 The *dm3* reference used for mapping was obtained from Ensembl (Drosophila_melanogaster_BDGP5.dna.toplevel). More recent assembly exists but is much more complex and not easy to combine to public data generated with *dm3*.
 
@@ -140,7 +141,7 @@ The raw sequencing depth obtained from the sum of all input read pairs times the
 
 The mapped sequencing depth is close to the first value with (82360678 * 125) / 168'736'537 = **61.01x**
 
-## Compute full genome coverage from mappings
+### Compute full genome coverage from mappings
 
 ```bash
 scripts/bedtools_genomecoverage.sh
@@ -202,7 +203,7 @@ Some of the output of the .Rmd code is reproduced here for chr2R and the full ge
  Max.   :6.893e-02          
 ```
 
-## Identify the GAP fraction of the genome
+### Identify the GAP fraction of the genome
 
 Reference genome always contain N-regions where the sequence was too degenerated to be defined. These GAPs are regions where no mapping can occur and they contribute to an apparent decrease in coverage efficiency.
 
@@ -251,9 +252,10 @@ The **findNregions.pl** Perl script allows identifying GAPs and building a track
 
 6Mb of the reference are occupied by N's, likely representing the telomeres and centromeres for the largest part. There regions can obviously not be mapped by reads and are good to know when visualising the data.
 
-# Find differences between sequenced data and reference genome
+## Find differences between sequenced data and reference genome
+*[(back-to-top)[#top]]*
 
-## extract the individual from the published multi-genome variant file
+### extract the individual from the published multi-genome variant file
 
 This genome is part of a set of 205 individuals and a global VCF file is available at DGRP <http://dgrp2.gnets.ncsu.edu/data/website/dgrp2.vcf> from which we could extract the calls reported for DGRP-100 with a combination of **SnpSift** and **vcftools (vcfsubset)** commands.
 
@@ -279,7 +281,7 @@ Reading input from STDIN
 976945 variant positions reported (844512 SNP, 132433 indel)
 ```
 
-## Call variants with Varscan2 mpileup2cns
+### Call variants with Varscan2 mpileup2cns
 
 Local variant calling from the mapped data was performed using **Varscan2** in order to evaluate its performance as compared to the DGRP gold standard. All caller options were kept to default in order to keep it simple but could be tuned to better fit user prior knowledge and expectations.
 
@@ -288,7 +290,7 @@ Local variant calling from the mapped data was performed using **Varscan2** in o
 scripts/varscan2-mpileup2cns_call-variants.sh
 ```
 
-## Compare results with DGRP2 calls for the same genome
+### Compare results with DGRP2 calls for the same genome
 
 Resulting calls were intersect with the reported DGRP2_100 variants.
 
@@ -436,7 +438,7 @@ java -jar $PICARD/picard.jar DownsampleSam \
 
 As expected, all metrics are comparable between subsets with 93% mapped reads and 90% proper pairs.
 
-## Call variants for each BAM subset
+### Call variants for each BAM subset
 
 To do so, we can loop through the three subsets with one bash command.
 
@@ -493,7 +495,7 @@ In summary:
 
 Again, the results are quite comparable between sets with a 22% decrease in the number of calls where the sequencing depth was decreased to 25% (~12x coverage).
 
-## Compute descriptive statistics based on variant depth from each result
+### Compute descriptive statistics based on variant depth from each result
 
 ```bash
 for v in *.vcf; do echo ${v};
@@ -588,7 +590,7 @@ do gzip -cd SRR833244_dm5-pe_${pc}pc_mpileup2cns.vcf.gz | \
 done
 ```
 
-## Compare hom-calls with the BDGP 'gold' variant list
+### Compare hom-calls with the BDGP 'gold' variant list
 
 ```bash
 for pc in 25 33 50;
@@ -673,8 +675,9 @@ In summary:
 |  25% ~16x |     108954    |    498553    |  82.1%   |    78.6%  |   135558   |
 ```
 
-# Conclusion of this study
- 
+## Conclusion of this study
+*[(back-to-top)[#top]]*
+
 Increasing the depth of sequencing slightly improves the **recall sensitivity** of known variants from 78.6% (25% data ~ 16x raw coverage) to 84.1% (33% data ~ 21x raw coverage), 87.4% (50% data ~ 32x raw coverage) as compared to the recall of 88.7% for full data analysis (~65x raw coverage) . 
 
 If missing 10% of the variants is not an issue, a sequencing depth of ~12x seems sufficient to achieve the goal of Drosophila variant sequencing but a raw coverage of 30x to 50x will be a better choice to stay closer to the reference results obtained by others and keep some safety margin.
