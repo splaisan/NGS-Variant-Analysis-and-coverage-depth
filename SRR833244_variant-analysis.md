@@ -252,7 +252,7 @@ The **findNregions.pl** Perl script allows identifying GAPs and building a track
 # for a total N-length of 6,364,966 bps (3.8% of represented sequences)
 ```
 
-6Mb of the reference are occupied by N's, likely representing the telomeres and centromeres for the largest part. There regions can obviously not be mapped by reads and are good to know when visualising the data.
+6Mb of the reference are occupied by N's, likely representing the telomeres and centromeres for the largest part. These regions can obviously not be mapped by reads and are good to know when visualising the data.
 
 ## Find differences between sequenced data and reference genome
 *[[back-to-top](#top)]*  
